@@ -45,8 +45,9 @@ response:
 
 OR
 
-schemaless instead of newCore in the url to use a schemaless database(core) instead.
+schemaless instead of newCore in the url to use a schemaless database instead.
 http://localhost:8983/solr/schemaless/update/json 
+https://cwiki.apache.org/confluence/display/solr/Schemaless+Mode
 
 Mode about query:
 https://wiki.apache.org/solr/SolrQuerySyntax
