@@ -43,6 +43,11 @@ response:
   }
 }
 
+OR
+
+schemaless instead of newCore in the url to use a schemaless database(core) instead.
+http://localhost:8983/solr/schemaless/update/json 
+
 Mode about query:
 https://wiki.apache.org/solr/SolrQuerySyntax
 http://wiki.apache.org/solr/CommonQueryParameters
