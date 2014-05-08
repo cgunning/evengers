@@ -14,10 +14,20 @@ body {
 button {
   margin: 0px 4px;
 }
+.btn-default {
+  height:34px;
+}
 input {
   color: inherit;
   font: inherit;
   margin: 0px -1px;
+}
+img {
+  height:auto;
+  width:100%;
+}
+.pagination {
+  text-align:center;
 }
 
 /*

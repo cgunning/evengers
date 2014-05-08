@@ -1,7 +1,6 @@
 <?php
 //phpinfo();
-
-
+	session_start();
 ?>
 <html>
 	<head>
@@ -15,13 +14,11 @@
 		<link rel='stylesheet' href='stylesheets/bootstrap-theme.css'>
 		<link rel='stylesheet' href='stylesheets/style.css'>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-		<script type = "text/javascript">
-			function inputfocus(form){
-				form.search.focus()
-			}
-		</script>
 		<script type="text/javascript">
-			function ajax() {
+			CURRENT_IP = "130.229.137.159";
+			ROWS_PER_PAGE = 12;
+			function ajax(page) {
+				var xmlhttp;
 				if (window.XMLHttpRequest) {
 					// code for IE7+, Firefox, Chrome, Opera, Safari
 					xmlhttp=new XMLHttpRequest();
@@ -35,7 +32,29 @@
 				}
 				xmlhttp.open("POST","result.php",true);
 				xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-				xmlhttp.send("query="+document.getElementById('searchField').value);
+				xmlhttp.send("query="+sessionStorage.getItem("query")+"&page="+page+"&ip="+CURRENT_IP+"&rpp="+ROWS_PER_PAGE);
+			}
+			function ajaxPagination() {
+				var xmlhttp;
+				if (window.XMLHttpRequest) {
+					// code for IE7+, Firefox, Chrome, Opera, Safari
+					xmlhttp=new XMLHttpRequest();
+				} else { // code for IE6, IE5
+					xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xmlhttp.onreadystatechange=function() {
+					if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+						document.getElementById("pagination").innerHTML=xmlhttp.responseText;
+					}
+				}
+				xmlhttp.open("POST","pagination.php",true);
+				xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xmlhttp.send("query="+sessionStorage.getItem("query")+"&ip="+CURRENT_IP+"&rpp="+ROWS_PER_PAGE);
+			}
+			function search() {
+				sessionStorage.setItem("query", document.getElementById("searchField").value);
+				ajax('1');
+				ajaxPagination();
 			}
 		</script>
 		<script>
@@ -46,6 +65,9 @@
 						e.preventDefault();
 					}
 				});
+				$('#searchBtn').click(function() {
+					$('#jumbo').slideUp(1000);
+				});
 			});
 		</script>
 	</head>
@@ -54,31 +76,27 @@
 
 		<form name="searchform">
 			<div class="col-lg-12">
-				<div class="col-sm-12 col-lg-offset-3 col-lg-6">
-					<div class="jumbotron">
-						<h2 class="text-center">Image search provided by Evengers!</h2>
+				<div class="col-md-12 col-lg-offset-3 col-lg-6">
+					<div id="jumbo" class="jumbotron">
+						<h1 class="text-center">Image search</h1>
 					</div>
 					<div class="input-group">
-						<input id="searchField" type="text" class="form-control" placeholder="Search" autocomplete="off">
+						<input id="searchField" type="text" class="form-control" placeholder="Search" autocomplete="off" autofocus>
 						<span class="input-group-btn">
-							<button id="searchBtn" class="btn btn-default" type="button" onclick="ajax()">
+							<button id="searchBtn" class="btn btn-default" type="button" onclick="search()">
 								<span class="glyphicon glyphicon-search"></span>
 							</button>
 						</span>
 					</div><!-- /input-group -->
-					<div id="result">
-
-					</div>
-					<ul class="pagination">
-						<li><a href="#">&laquo;</a></li>
-						<li><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#">&raquo;</a></li>
-					</ul>
 				</div><!-- /.col-lg-6 -->
+			</div> <!-- ./col-lg-12 -->
+			<div class="col-lg-12">
+				<div class="col-md-12 col-lg-offset-1 col-lg-10" id="result">
+
+				</div>
+				<div class="col-md-12 col-lg-offset-1 col-lg-10 text-center" id="pagination">
+
+				</div>
 			</div>
 		</form>
 	</body>
