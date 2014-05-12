@@ -20,25 +20,22 @@ import org.jsoup.select.Elements;
 public class Main {
 
 
+    static ArrayList<String> visitedLinks = new ArrayList<String>();
 
 	public static void main(String[] args) {
 
        // String filePath = "C:\\Users\\Patrik\\Desktop\\file.xml";
-        String filePath = "/home/christoffergunning/workspace/evengers/file.xml";
+        String filePath = "/home/christoffergunning/workspace/evengers/file1000.xml";
 
 		XMLHelper xmlHelper = new XMLHelper();
 
-		ArrayList<String> links = parseDocument(xmlHelper, "https://en.wikipedia.org/wiki/F.C.Barcelona");
 
-		int i = 0;
 
-		for(String newWebsite : links){
+		for(int i = 0; xmlHelper.numberOfDocs < 1000; i++){
 
-			if(xmlHelper.numberOfDocs > 100)
-				break;
-
-			parseDocument(xmlHelper, newWebsite);
-			i++;
+			String tmp = parseDocument(xmlHelper, "http://en.wikipedia.org/wiki/Special:Random");
+            if(tmp != null)
+                visitedLinks.add(tmp);
 		}
 
 		System.out.println("XML:");
@@ -67,19 +64,19 @@ public class Main {
 		}
 	}
 
-	public static ArrayList<String> parseDocument(XMLHelper xmlHelper, String websiteUrl){
+	public static String parseDocument(XMLHelper xmlHelper, String websiteUrl){
 
 		try {
 
 			Document doc = Jsoup.connect(websiteUrl).get();
 
 			String title = doc.select("h1#firstHeading").text();
-
-			//			System.out.println("Title: " + title);
+            if(visitedLinks.contains(title))
+                return null;
 
 			Elements imageContainers = doc.select("div.thumbinner");
-
-			for(Element element : imageContainers){
+            System.out.println("Parsing document: " + title);
+            for(Element element : imageContainers){
 
 				String image_descr = element.select("div.thumbcaption").text();
 				String image_link = element.select("img.thumbimage").attr("src"); 
@@ -87,39 +84,10 @@ public class Main {
 				if(image_descr == "" || image_link == "")
 					continue;
 
-				//				System.out.println("Descr: " + image_descr);
-
-				//				System.out.println("Link: " + image_link);
-
 				xmlHelper.addDoc(title, image_link, image_descr);
 			}
 
-			ArrayList<String> links = new ArrayList<String>();
-
-			Elements linkElements = doc.select("a");
-
-			String temp = "";
-
-			String tempLink = "";
-
-			for(Element linkElement : linkElements){
-
-				temp = linkElement.attr("href");
-
-				if(temp.startsWith("/wiki/")){
-
-					tempLink = "https://en.wikipedia.org" + temp;
-
-					if(!links.contains(tempLink)){
-
-						links.add(tempLink);
-
-						//						System.out.println(tempLink);
-					}
-				}
-			}
-
-			return links;
+            return title;
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

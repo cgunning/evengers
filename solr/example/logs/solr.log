@@ -5540,3 +5540,745 @@ INFO  - 2014-05-12 12:15:26.759; org.apache.solr.core.SolrCore; [testCore] webap
 INFO  - 2014-05-12 12:16:03.907; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={q=descr:tes*t&wt=json} hits=0 status=0 QTime=4 
 INFO  - 2014-05-12 12:16:08.526; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={q=descr:t*t&wt=json} hits=1 status=0 QTime=9 
 INFO  - 2014-05-12 12:16:14.386; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={q=descr:*&wt=json} hits=101 status=0 QTime=4 
+INFO  - 2014-05-12 13:48:38.089; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1399895318073&wt=json} status=0 QTime=1 
+INFO  - 2014-05-12 13:48:38.129; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/system params={_=1399895318114&wt=json} status=0 QTime=5 
+INFO  - 2014-05-12 13:48:42.803; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-top.html&_=1399895322792&contentType=text/html;charset%3Dutf-8} status=0 QTime=1 
+INFO  - 2014-05-12 13:48:42.812; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-bottom.html&_=1399895322793&contentType=text/html;charset%3Dutf-8} status=0 QTime=0 
+INFO  - 2014-05-12 13:48:42.853; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/luke params={numTerms=0&_=1399895322827&show=index&wt=json} status=0 QTime=1 
+INFO  - 2014-05-12 13:48:42.857; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/replication params={command=details&_=1399895322831&wt=json} status=0 QTime=2 
+INFO  - 2014-05-12 13:48:42.867; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/system params={_=1399895322833&wt=json} status=0 QTime=3 
+INFO  - 2014-05-12 13:48:42.873; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1399895322836} status=0 QTime=0 
+INFO  - 2014-05-12 13:48:42.883; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/ping params={action=status&_=1399895322838&wt=json} status=503 QTime=2 
+INFO  - 2014-05-12 13:48:49.324; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&_=1399895329309&wt=json} status=0 QTime=1 
+INFO  - 2014-05-12 13:48:53.119; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/file params={_=1399895333105&wt=json} status=0 QTime=1 
+ERROR - 2014-05-12 13:48:53.788; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: undefined field text
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1246)
+	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:419)
+	at org.apache.lucene.analysis.AnalyzerWrapper.initReader(AnalyzerWrapper.java:117)
+	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:178)
+	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:207)
+	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:375)
+	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:743)
+	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:542)
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:299)
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:185)
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:152)
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
+	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:145)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:197)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1952)
+	at org.apache.solr.handler.PingRequestHandler.handlePing(PingRequestHandler.java:253)
+	at org.apache.solr.handler.PingRequestHandler.handleRequestBody(PingRequestHandler.java:210)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1952)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:774)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:744)
+
+INFO  - 2014-05-12 13:48:53.789; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/ping params={ts=1399895333776&_=1399895333776&wt=json} status=400 QTime=3 
+ERROR - 2014-05-12 13:48:53.790; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: Ping query caused exception: undefined field text
+	at org.apache.solr.handler.PingRequestHandler.handlePing(PingRequestHandler.java:262)
+	at org.apache.solr.handler.PingRequestHandler.handleRequestBody(PingRequestHandler.java:210)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1952)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:774)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.apache.solr.common.SolrException: undefined field text
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1246)
+	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:419)
+	at org.apache.lucene.analysis.AnalyzerWrapper.initReader(AnalyzerWrapper.java:117)
+	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:178)
+	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:207)
+	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:375)
+	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:743)
+	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:542)
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:299)
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:185)
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:152)
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
+	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:145)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:197)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1952)
+	at org.apache.solr.handler.PingRequestHandler.handlePing(PingRequestHandler.java:253)
+	... 31 more
+
+INFO  - 2014-05-12 13:48:53.791; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/ping params={ts=1399895333776&_=1399895333776&wt=json} status=500 QTime=5 
+ERROR - 2014-05-12 13:48:53.793; org.apache.solr.common.SolrException; null:org.apache.solr.common.SolrException: Ping query caused exception: undefined field text
+	at org.apache.solr.handler.PingRequestHandler.handlePing(PingRequestHandler.java:262)
+	at org.apache.solr.handler.PingRequestHandler.handleRequestBody(PingRequestHandler.java:210)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1952)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:774)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.apache.solr.common.SolrException: undefined field text
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1246)
+	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:419)
+	at org.apache.lucene.analysis.AnalyzerWrapper.initReader(AnalyzerWrapper.java:117)
+	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:178)
+	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:207)
+	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:375)
+	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:743)
+	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:542)
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:299)
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:185)
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:152)
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
+	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:145)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:197)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1952)
+	at org.apache.solr.handler.PingRequestHandler.handlePing(PingRequestHandler.java:253)
+	... 31 more
+
+INFO  - 2014-05-12 13:49:00.814; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=*:*&_=1399895340803&wt=json} hits=101 status=0 QTime=2 
+ERROR - 2014-05-12 13:49:06.945; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: undefined field text
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1246)
+	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:419)
+	at org.apache.lucene.analysis.AnalyzerWrapper.initReader(AnalyzerWrapper.java:117)
+	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:178)
+	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:207)
+	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:375)
+	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:743)
+	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:542)
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:299)
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:185)
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:152)
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
+	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:145)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:197)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1952)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:774)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:744)
+
+INFO  - 2014-05-12 13:49:06.946; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=F&_=1399895346933&wt=json} status=400 QTime=2 
+ERROR - 2014-05-12 13:49:12.456; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: undefined field text
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1246)
+	at org.apache.solr.schema.IndexSchema.getFieldType(IndexSchema.java:1198)
+	at org.apache.solr.parser.SolrQueryParserBase.getPrefixQuery(SolrQueryParserBase.java:758)
+	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:523)
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:299)
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:185)
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:152)
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
+	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:145)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:197)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1952)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:774)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:744)
+
+INFO  - 2014-05-12 13:49:12.456; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=F*&_=1399895352443&wt=json} status=400 QTime=2 
+INFO  - 2014-05-12 13:51:04.314; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={_=1399895464303&wt=json} status=0 QTime=2 
+INFO  - 2014-05-12 13:51:04.348; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={_=1399895464335&wt=json} status=0 QTime=1 
+INFO  - 2014-05-12 13:51:05.641; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={_=1399895465627&wt=json} status=0 QTime=2 
+INFO  - 2014-05-12 13:51:07.631; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/testCore/'
+INFO  - 2014-05-12 13:51:07.660; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_48
+INFO  - 2014-05-12 13:51:07.686; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2014-05-12 13:51:07.687; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2014-05-12 13:51:07.693; org.apache.solr.schema.IndexSchema; [testCore] Schema name=new
+INFO  - 2014-05-12 13:51:07.724; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2014-05-12 13:51:07.733; org.apache.solr.core.CoreContainer; Reloading SolrCore 'testCore' using configuration from instancedir solr/testCore/
+INFO  - 2014-05-12 13:51:07.733; org.apache.solr.core.SolrCore; [testCore] Opening new SolrCore at solr/testCore/, dataDir=/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/
+INFO  - 2014-05-12 13:51:07.733; org.apache.solr.core.SolrCore; JMX monitoring not detected for core: testCore
+INFO  - 2014-05-12 13:51:07.733; org.apache.solr.core.SolrCore; New index directory detected: old=null new=/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/index/
+INFO  - 2014-05-12 13:51:07.734; org.apache.solr.core.SolrCore; created json: solr.JSONResponseWriter
+INFO  - 2014-05-12 13:51:07.734; org.apache.solr.core.SolrCore; no updateRequestProcessorChain defined as default, creating implicit default
+INFO  - 2014-05-12 13:51:07.735; org.apache.solr.core.RequestHandlers; created /query: solr.SearchHandler
+INFO  - 2014-05-12 13:51:07.735; org.apache.solr.core.RequestHandlers; created /select: solr.SearchHandler
+INFO  - 2014-05-12 13:51:07.735; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2014-05-12 13:51:07.735; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2014-05-12 13:51:07.735; org.apache.solr.core.RequestHandlers; created /admin/: solr.admin.AdminHandlers
+INFO  - 2014-05-12 13:51:07.736; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2014-05-12 13:51:07.736; org.apache.solr.core.RequestHandlers; created /debug/dump: solr.DumpRequestHandler
+INFO  - 2014-05-12 13:51:07.736; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2014-05-12 13:51:07.736; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-05-12 13:51:07.736; org.apache.solr.core.RequestHandlers; created /suggest: solr.SearchHandler
+INFO  - 2014-05-12 13:51:07.736; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-05-12 13:51:07.737; org.apache.solr.core.RequestHandlers; created /tvrh: solr.SearchHandler
+INFO  - 2014-05-12 13:51:07.737; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-05-12 13:51:07.737; org.apache.solr.core.RequestHandlers; created /terms: solr.SearchHandler
+INFO  - 2014-05-12 13:51:07.737; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2014-05-12 13:51:07.739; org.apache.solr.update.CommitTracker; Hard AutoCommit: if uncommited for 15000ms; 
+INFO  - 2014-05-12 13:51:07.739; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2014-05-12 13:51:07.741; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@465e2e1c[testCore] main
+INFO  - 2014-05-12 13:51:07.742; org.apache.solr.rest.ManagedResourceStorage$FileStorageIO; File-based storage initialized to use dir: /home/christoffergunning/workspace/evengers/solr/example/solr/testCore/conf
+INFO  - 2014-05-12 13:51:07.743; org.apache.solr.rest.RestManager; Initializing RestManager with initArgs: {storageDir=solr/testCore/conf/}
+INFO  - 2014-05-12 13:51:07.743; org.apache.solr.rest.ManagedResourceStorage; Reading _rest_managed.json using file:dir=/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/conf
+WARN  - 2014-05-12 13:51:07.744; org.apache.solr.rest.ManagedResource; No stored data found for /rest/managed
+WARN  - 2014-05-12 13:51:07.744; org.apache.solr.rest.ManagedResource; No registered observers for /rest/managed
+INFO  - 2014-05-12 13:51:07.745; org.apache.solr.rest.RestManager; Initializing 0 registered ManagedResources
+INFO  - 2014-05-12 13:51:07.745; org.apache.solr.handler.component.SuggestComponent; Initializing SuggestComponent
+INFO  - 2014-05-12 13:51:07.745; org.apache.solr.spelling.suggest.SolrSuggester; init: {name=mySuggester,lookupImpl=FuzzyLookupFactory,dictionaryImpl=DocumentDictionaryFactory,field=cat,weightField=price,suggestAnalyzerFieldType=string}
+INFO  - 2014-05-12 13:51:07.746; org.apache.solr.spelling.suggest.SolrSuggester; Dictionary loaded with params: {name=mySuggester,lookupImpl=FuzzyLookupFactory,dictionaryImpl=DocumentDictionaryFactory,field=cat,weightField=price,suggestAnalyzerFieldType=string}
+INFO  - 2014-05-12 13:51:07.748; org.apache.solr.handler.ReplicationHandler; Commits will be reserved for  10000
+INFO  - 2014-05-12 13:51:07.748; org.apache.solr.update.DefaultSolrCoreState; Creating new IndexWriter...
+INFO  - 2014-05-12 13:51:07.749; org.apache.solr.core.SolrCore; [testCore] Registered new searcher Searcher@465e2e1c[testCore] main{StandardDirectoryReader(segments_2:3:nrt _0(4.8):C101)}
+INFO  - 2014-05-12 13:51:07.749; org.apache.solr.update.DefaultSolrCoreState; Waiting until IndexWriter is unused... core=testCore
+INFO  - 2014-05-12 13:51:07.750; org.apache.solr.update.DefaultSolrCoreState; Closing old IndexWriter... core=testCore
+INFO  - 2014-05-12 13:51:07.756; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(MMapDirectory@/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/index lockFactory=NativeFSLockFactory@/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/index; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_2,generation=2}
+INFO  - 2014-05-12 13:51:07.756; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 2
+INFO  - 2014-05-12 13:51:07.756; org.apache.solr.update.DefaultSolrCoreState; New IndexWriter is ready to be used.
+INFO  - 2014-05-12 13:51:07.764; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@1fae18cb[testCore] main
+INFO  - 2014-05-12 13:51:07.765; org.apache.solr.core.CoreContainer; replacing core: testCore
+INFO  - 2014-05-12 13:51:07.765; org.apache.solr.core.SolrCore; [testCore]  CLOSING SolrCore org.apache.solr.core.SolrCore@427631b9
+INFO  - 2014-05-12 13:51:07.765; org.apache.solr.core.SolrCore; [testCore] Registered new searcher Searcher@1fae18cb[testCore] main{StandardDirectoryReader(segments_2:3:nrt _0(4.8):C101)}
+INFO  - 2014-05-12 13:51:07.765; org.apache.solr.update.DirectUpdateHandler2; closing DirectUpdateHandler2{commits=2,autocommit maxTime=15000ms,autocommits=1,soft autocommits=0,optimizes=1,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=101,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0,transaction_logs_total_size=23513,transaction_logs_total_number=1}
+INFO  - 2014-05-12 13:51:07.766; org.apache.solr.core.SolrCore; [testCore] Closing main searcher on request.
+INFO  - 2014-05-12 13:51:07.767; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={action=RELOAD&_=1399895467614&core=testCore&wt=json} status=0 QTime=136 
+INFO  - 2014-05-12 13:51:07.783; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={_=1399895467771&wt=json} status=0 QTime=2 
+INFO  - 2014-05-12 13:51:11.102; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/luke params={numTerms=0&_=1399895471091&show=index&wt=json} status=0 QTime=1 
+INFO  - 2014-05-12 13:51:11.111; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/replication params={command=details&_=1399895471094&wt=json} status=0 QTime=1 
+INFO  - 2014-05-12 13:51:11.120; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/system params={_=1399895471095&wt=json} status=0 QTime=3 
+INFO  - 2014-05-12 13:51:11.125; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1399895471096} status=0 QTime=1 
+INFO  - 2014-05-12 13:51:11.131; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/ping params={action=status&_=1399895471097&wt=json} status=503 QTime=0 
+ERROR - 2014-05-12 13:51:20.749; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: undefined field text
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1246)
+	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:419)
+	at org.apache.lucene.analysis.AnalyzerWrapper.initReader(AnalyzerWrapper.java:117)
+	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:178)
+	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:207)
+	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:375)
+	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:743)
+	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:542)
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:299)
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:185)
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:152)
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
+	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:145)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:197)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1952)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:774)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:744)
+
+INFO  - 2014-05-12 13:51:20.749; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=F&_=1399895480737&wt=json} status=400 QTime=1 
+INFO  - 2014-05-12 13:51:33.564; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:hej&_=1399895493551&wt=json} hits=0 status=0 QTime=1 
+INFO  - 2014-05-12 13:53:07.665; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:Barcelona&_=1399895587649&wt=json} hits=48 status=0 QTime=3 
+INFO  - 2014-05-12 13:53:21.932; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:Ba*&_=1399895601915&wt=json} hits=51 status=0 QTime=4 
+INFO  - 2014-05-12 14:19:36.826; org.apache.solr.update.processor.LogUpdateProcessor; [testCore] webapp=/solr path=/update params={} {add=[1 (1467898581965864960), 2 (1467898581971107840), 3 (1467898581976350720), 4 (1467898581978447872), 5 (1467898581982642176), 6 (1467898581983690752), 7 (1467898581985787904), 8 (1467898581986836480), 9 (1467898581987885056), 10 (1467898581988933632), ... (100 adds)]} 0 117
+INFO  - 2014-05-12 14:19:36.834; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=true,prepareCommit=false}
+INFO  - 2014-05-12 14:19:36.880; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@65479697[testCore] main
+INFO  - 2014-05-12 14:19:36.881; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2014-05-12 14:19:36.881; org.apache.solr.core.SolrCore; [testCore] Registered new searcher Searcher@65479697[testCore] main{StandardDirectoryReader(segments_2:6:nrt _0(4.8):C101/100 _1(4.8):C100)}
+INFO  - 2014-05-12 14:19:36.881; org.apache.solr.update.processor.LogUpdateProcessor; [testCore] webapp=/solr path=/update params={softCommit=true} {commit=} 0 48
+INFO  - 2014-05-12 14:19:51.715; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2014-05-12 14:19:51.746; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(MMapDirectory@/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/index lockFactory=NativeFSLockFactory@/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/index; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_2,generation=2}
+	commit{dir=NRTCachingDirectory(MMapDirectory@/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/index lockFactory=NativeFSLockFactory@/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/index; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_3,generation=3}
+INFO  - 2014-05-12 14:19:51.746; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 3
+INFO  - 2014-05-12 14:19:51.748; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2014-05-12 14:19:53.676; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1399897193664&wt=json} status=0 QTime=0 
+INFO  - 2014-05-12 14:19:53.730; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/system params={_=1399897193710&wt=json} status=0 QTime=7 
+INFO  - 2014-05-12 14:19:55.852; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-top.html&_=1399897195840&contentType=text/html;charset%3Dutf-8} status=0 QTime=1 
+INFO  - 2014-05-12 14:19:55.859; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-bottom.html&_=1399897195841&contentType=text/html;charset%3Dutf-8} status=0 QTime=0 
+INFO  - 2014-05-12 14:19:55.887; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/luke params={numTerms=0&_=1399897195873&show=index&wt=json} status=0 QTime=0 
+INFO  - 2014-05-12 14:19:55.895; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/replication params={command=details&_=1399897195876&wt=json} status=0 QTime=1 
+INFO  - 2014-05-12 14:19:55.906; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/system params={_=1399897195877&wt=json} status=0 QTime=3 
+INFO  - 2014-05-12 14:19:55.912; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1399897195880} status=0 QTime=1 
+INFO  - 2014-05-12 14:19:55.917; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/ping params={action=status&_=1399897195883&wt=json} status=503 QTime=0 
+INFO  - 2014-05-12 14:19:59.233; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=true,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2014-05-12 14:19:59.319; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(MMapDirectory@/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/index lockFactory=NativeFSLockFactory@/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/index; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_3,generation=3}
+	commit{dir=NRTCachingDirectory(MMapDirectory@/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/index lockFactory=NativeFSLockFactory@/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/index; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_4,generation=4}
+INFO  - 2014-05-12 14:19:59.320; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 4
+INFO  - 2014-05-12 14:19:59.326; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@5093c8c0[testCore] main
+INFO  - 2014-05-12 14:19:59.327; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2014-05-12 14:19:59.327; org.apache.solr.core.SolrCore; [testCore] Registered new searcher Searcher@5093c8c0[testCore] main{StandardDirectoryReader(segments_4:8:nrt _2(4.8):C101)}
+INFO  - 2014-05-12 14:19:59.328; org.apache.solr.update.processor.LogUpdateProcessor; [testCore] webapp=/solr path=/update params={optimize=true&_=1399897199215&wt=json&waitFlush=true} {optimize=} 0 96
+ERROR - 2014-05-12 14:20:11.256; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: undefined field text
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1246)
+	at org.apache.solr.schema.IndexSchema.getFieldType(IndexSchema.java:1198)
+	at org.apache.solr.parser.SolrQueryParserBase.getPrefixQuery(SolrQueryParserBase.java:758)
+	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:523)
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:299)
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:185)
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:152)
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
+	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:145)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:197)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1952)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:774)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:744)
+
+INFO  - 2014-05-12 14:20:11.257; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=kalle*&_=1399897211245&wt=json} status=400 QTime=2 
+INFO  - 2014-05-12 14:20:19.524; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:kalle*&_=1399897219508&wt=json} hits=0 status=0 QTime=1 
+INFO  - 2014-05-12 14:20:32.061; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:*wrong*&_=1399897232036&wt=json} hits=0 status=0 QTime=14 
+INFO  - 2014-05-12 14:20:33.032; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:*wrong*&_=1399897233014&wt=json} hits=0 status=0 QTime=7 
+INFO  - 2014-05-12 14:20:37.944; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:wrong&_=1399897237932&wt=json} hits=0 status=0 QTime=1 
+INFO  - 2014-05-12 14:20:41.247; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:wrong*&_=1399897241238&wt=json} hits=0 status=0 QTime=1 
+ERROR - 2014-05-12 14:21:08.264; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: undefined field text
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1246)
+	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:419)
+	at org.apache.lucene.analysis.AnalyzerWrapper.initReader(AnalyzerWrapper.java:117)
+	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:178)
+	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:207)
+	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:375)
+	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:743)
+	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:542)
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:299)
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:185)
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:139)
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:152)
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
+	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:145)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:197)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1952)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:774)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:744)
+
+INFO  - 2014-05-12 14:21:08.264; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=title:simon+tunbridge&_=1399897268253&wt=json} status=400 QTime=2 
+INFO  - 2014-05-12 14:21:17.956; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=title:"simon+tunbridge"&_=1399897277943&wt=json} hits=0 status=0 QTime=0 
+INFO  - 2014-05-12 14:21:29.058; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=title:"Simon+Tunbridge"&_=1399897289047&wt=json} hits=0 status=0 QTime=0 
+INFO  - 2014-05-12 14:22:21.313; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=title:"West+Simsbury,+Connecticut"&_=1399897341302&wt=json} hits=2 status=0 QTime=1 
+INFO  - 2014-05-12 14:22:44.940; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:"West+Simsbury,+Connecticut"&_=1399897364926&wt=json} hits=0 status=0 QTime=3 
+INFO  - 2014-05-12 14:22:50.753; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:"West+Simsbury,+Connecticut*"&_=1399897370739&wt=json} hits=0 status=0 QTime=1 
+INFO  - 2014-05-12 14:22:54.898; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:"*West+Simsbury,+Connecticut*"&_=1399897374886&wt=json} hits=0 status=0 QTime=3 
+INFO  - 2014-05-12 14:23:02.253; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:"*West*"&_=1399897382239&wt=json} hits=3 status=0 QTime=2 
+INFO  - 2014-05-12 14:26:40.325; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(f+c+barcelona)&_=1399897600313&wt=json} hits=0 status=0 QTime=1 
+INFO  - 2014-05-12 14:26:48.615; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(f*c*barcelona)&_=1399897608596&wt=json} hits=0 status=0 QTime=8 
+INFO  - 2014-05-12 14:26:49.342; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(f*c*barcelona)&_=1399897609322&wt=json} hits=0 status=0 QTime=6 
+INFO  - 2014-05-12 14:26:58.571; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(F*C*Barcelona)&_=1399897618550&wt=json} hits=0 status=0 QTime=6 
+INFO  - 2014-05-12 14:26:58.802; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(F*C*Barcelona)&_=1399897618783&wt=json} hits=0 status=0 QTime=9 
+INFO  - 2014-05-12 14:26:59.353; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(F*C*Barcelona)&_=1399897619330&wt=json} hits=0 status=0 QTime=7 
+INFO  - 2014-05-12 14:27:10.281; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(F.C.+Barcelona*)&_=1399897630270&wt=json} hits=0 status=0 QTime=1 
+INFO  - 2014-05-12 14:27:10.900; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(F.C.+Barcelona*)&_=1399897630888&wt=json} hits=0 status=0 QTime=1 
+INFO  - 2014-05-12 14:27:11.128; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(F.C.+Barcelona*)&_=1399897631116&wt=json} hits=0 status=0 QTime=1 
+INFO  - 2014-05-12 14:27:15.151; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(Barcelona*)&_=1399897635137&wt=json} hits=0 status=0 QTime=1 
+INFO  - 2014-05-12 14:27:20.845; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:Barcelona*&_=1399897640834&wt=json} hits=0 status=0 QTime=1 
+INFO  - 2014-05-12 14:27:24.085; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:Barcelona&_=1399897644071&wt=json} hits=0 status=0 QTime=2 
+INFO  - 2014-05-12 14:27:30.655; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:West&_=1399897650642&wt=json} hits=3 status=0 QTime=1 
+ERROR - 2014-05-12 14:27:39.093; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: undefined field text
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1246)
+	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:419)
+	at org.apache.lucene.analysis.AnalyzerWrapper.initReader(AnalyzerWrapper.java:117)
+	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:178)
+	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:207)
+	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:375)
+	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:743)
+	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:542)
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:299)
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:185)
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:139)
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:152)
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
+	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:145)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:197)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1952)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:774)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:744)
+
+INFO  - 2014-05-12 14:27:39.093; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:West+Simsbury&_=1399897659077&wt=json} status=400 QTime=1 
+INFO  - 2014-05-12 14:27:44.257; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(West+Simsbury)&_=1399897664244&wt=json} hits=3 status=0 QTime=1 
+INFO  - 2014-05-12 14:27:50.540; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(West*Simsbury)&_=1399897670524&wt=json} hits=0 status=0 QTime=4 
+INFO  - 2014-05-12 14:27:54.480; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(West.*Simsbury)&_=1399897674456&wt=json} hits=0 status=0 QTime=14 
+INFO  - 2014-05-12 14:27:59.080; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(West,*Simsbury)&_=1399897679060&wt=json} hits=0 status=0 QTime=9 
+ERROR - 2014-05-12 14:28:23.074; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: undefined field text
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1246)
+	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:419)
+	at org.apache.lucene.analysis.AnalyzerWrapper.initReader(AnalyzerWrapper.java:117)
+	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:178)
+	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:207)
+	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:375)
+	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:743)
+	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:542)
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:299)
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:185)
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:189)
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:139)
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:152)
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
+	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:145)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:197)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1952)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:774)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:744)
+
+INFO  - 2014-05-12 14:28:23.075; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(West)*(Simsbury)&_=1399897703063&wt=json} status=400 QTime=3 
+INFO  - 2014-05-12 14:28:28.958; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(West*Simsbury)&_=1399897708944&wt=json} hits=0 status=0 QTime=4 
+INFO  - 2014-05-12 14:28:37.071; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/luke params={_=1399897717042&show=schema&wt=json} status=0 QTime=2 
+ERROR - 2014-05-12 14:28:52.992; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: undefined field *
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1246)
+	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:419)
+	at org.apache.lucene.analysis.AnalyzerWrapper.initReader(AnalyzerWrapper.java:117)
+	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:178)
+	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:207)
+	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:375)
+	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:743)
+	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:542)
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:299)
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:185)
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:152)
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
+	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:145)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:197)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1952)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:774)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:744)
+
+INFO  - 2014-05-12 14:28:52.993; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=*:West&_=1399897732979&wt=json} status=400 QTime=2 
+INFO  - 2014-05-12 14:29:01.711; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=*:*&_=1399897741699&wt=json} hits=101 status=0 QTime=1 
+INFO  - 2014-05-12 14:29:33.846; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:WEST&_=1399897773830&wt=json} hits=3 status=0 QTime=2 
+INFO  - 2014-05-12 14:30:35.100; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={debugQuery=true&indent=true&q=descr:*West*&_=1399897835074&wt=json} hits=3 status=0 QTime=15 
+INFO  - 2014-05-12 14:30:44.241; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={debugQuery=true&indent=true&q=descr:*W*&_=1399897844211&wt=json} hits=48 status=0 QTime=13 
+INFO  - 2014-05-12 14:31:45.281; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={debugQuery=true&indent=true&q=descr:(West\+*East)&_=1399897905253&wt=json} hits=0 status=0 QTime=4 
+INFO  - 2014-05-12 14:31:54.638; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(West\+*East)&_=1399897914621&wt=json} hits=0 status=0 QTime=5 
+INFO  - 2014-05-12 14:32:01.655; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(West\+S*)&_=1399897921642&wt=json} hits=0 status=0 QTime=1 
+INFO  - 2014-05-12 14:32:16.258; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:West\+S*&_=1399897936236&wt=json} hits=0 status=0 QTime=1 
+INFO  - 2014-05-12 14:32:17.105; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:West\+S*&_=1399897937091&wt=json} hits=0 status=0 QTime=1 
+INFO  - 2014-05-12 14:32:17.279; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:West\+S*&_=1399897937266&wt=json} hits=0 status=0 QTime=2 
+INFO  - 2014-05-12 14:32:17.696; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:West\+S*&_=1399897937684&wt=json} hits=0 status=0 QTime=1 
+INFO  - 2014-05-12 14:32:39.171; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:West\+*r&_=1399897959154&wt=json} hits=0 status=0 QTime=3 
+INFO  - 2014-05-12 14:32:43.137; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:West\+&_=1399897963126&wt=json} hits=3 status=0 QTime=2 
+INFO  - 2014-05-12 14:32:52.356; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:West\+*&_=1399897972344&wt=json} hits=0 status=0 QTime=1 
+INFO  - 2014-05-12 14:33:28.297; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(West+OR+East)&_=1399898008283&wt=json} hits=4 status=0 QTime=2 
+INFO  - 2014-05-12 14:38:33.336; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1399898313325&wt=json} status=0 QTime=0 
+INFO  - 2014-05-12 14:38:33.386; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/system params={_=1399898313371&wt=json} status=0 QTime=2 
+INFO  - 2014-05-12 14:38:36.003; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-top.html&_=1399898315993&contentType=text/html;charset%3Dutf-8} status=0 QTime=0 
+INFO  - 2014-05-12 14:38:36.009; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-bottom.html&_=1399898315994&contentType=text/html;charset%3Dutf-8} status=0 QTime=0 
+INFO  - 2014-05-12 14:38:36.039; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/luke params={numTerms=0&_=1399898316025&show=index&wt=json} status=0 QTime=0 
+INFO  - 2014-05-12 14:38:36.046; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/replication params={command=details&_=1399898316030&wt=json} status=0 QTime=1 
+INFO  - 2014-05-12 14:38:36.056; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/system params={_=1399898316031&wt=json} status=0 QTime=4 
+INFO  - 2014-05-12 14:38:36.060; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1399898316032} status=0 QTime=0 
+INFO  - 2014-05-12 14:38:36.067; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/admin/ping params={action=status&_=1399898316035&wt=json} status=503 QTime=0 
+INFO  - 2014-05-12 14:38:54.279; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:east%2Bwest&_=1399898334269&wt=json} hits=4 status=0 QTime=2 
+INFO  - 2014-05-12 14:39:21.827; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(east+west)&_=1399898361814&wt=json} hits=4 status=0 QTime=2 
+INFO  - 2014-05-12 14:39:34.430; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(east%2Bwest)&_=1399898374415&wt=json} hits=4 status=0 QTime=2 
+INFO  - 2014-05-12 14:50:10.934; org.apache.solr.update.processor.LogUpdateProcessor; [testCore] webapp=/solr path=/update params={} {add=[1 (1467900504713461760), 2 (1467900504717656064), 3 (1467900504718704640), 4 (1467900504719753216), 5 (1467900504720801792), 6 (1467900504720801793), 7 (1467900504721850368), 8 (1467900504721850369), 9 (1467900504722898944), 10 (1467900504723947520), ... (999 adds)]} 0 550
+INFO  - 2014-05-12 14:50:10.940; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=true,prepareCommit=false}
+INFO  - 2014-05-12 14:50:11.170; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@749ea4a4[testCore] main
+INFO  - 2014-05-12 14:50:11.171; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2014-05-12 14:50:11.171; org.apache.solr.core.SolrCore; [testCore] Registered new searcher Searcher@749ea4a4[testCore] main{StandardDirectoryReader(segments_4:12:nrt _3(4.8):C999)}
+INFO  - 2014-05-12 14:50:11.171; org.apache.solr.update.processor.LogUpdateProcessor; [testCore] webapp=/solr path=/update params={softCommit=true} {commit=} 0 231
+INFO  - 2014-05-12 14:50:19.843; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:(east%2Bwest)&_=1399899019829&wt=json} hits=26 status=0 QTime=3 
+INFO  - 2014-05-12 14:50:25.389; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2014-05-12 14:50:25.418; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(MMapDirectory@/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/index lockFactory=NativeFSLockFactory@/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/index; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_4,generation=4}
+	commit{dir=NRTCachingDirectory(MMapDirectory@/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/index lockFactory=NativeFSLockFactory@/home/christoffergunning/workspace/evengers/solr/example/solr/testCore/data/index; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5,generation=5}
+INFO  - 2014-05-12 14:50:25.419; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 5
+INFO  - 2014-05-12 14:50:25.420; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2014-05-12 14:50:42.445; org.apache.solr.core.SolrCore; [testCore] webapp=/solr path=/select params={indent=true&q=descr:tree&_=1399899042432&wt=json} hits=2 status=0 QTime=2 
