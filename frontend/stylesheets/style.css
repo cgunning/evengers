@@ -5,6 +5,7 @@ body {
 .thumbnail {
   text-align: center;
   text-decoration: none !important;
+  height:300px;
 }
 
 .navbar-btn {
@@ -23,11 +24,8 @@ input {
   margin: 0px -1px;
 }
 img {
-  height:auto;
   width:100%;
-}
-.pagination {
-  text-align:center;
+  height:auto;
 }
 
 /*

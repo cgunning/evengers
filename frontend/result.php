@@ -30,12 +30,15 @@
 	// $query = preg_replace_callback('/([' . $luceneReservedCharacters . '])/', function($matches) {
  //        	return '\\' . $matches[0];
  //   		}, $query);
-	$query = urlencode($query);
+	$query = urlencode("(".$query.")");
 
-	$start = ($page-1) * NUM_ROWS;
+	$start = ($page-1) * $rowsPerPage;
+	echo "PAGE: " .$page. "<br/>";
+	echo "QUERY: " .$query. "<br/>";
+	echo "START: " .$start. "<br/>";
 
 	// Create connection
-	$url = "http://".$ip.":8983/solr/newCore/select?q=".$query."&start=".$start."&rows=".$rowsPerPage."&wt=json";
+	$url = "http://".$ip.":8983/solr/testCore/select?q=descr:".$query."+title:".$query."&mlt=true&mlt.fl=title,descr&start=".$start."&rows=".$rowsPerPage."&wt=json";
 	 
 	//Executes the URL and saves the content (json) in the variable.
 	$content = curl($url);
@@ -44,32 +47,19 @@
 		$result = json_decode($content,true);
 		//prints the content of array on the page. Instead perform the operation you ae interested.
 		foreach($result['response']['docs'] as $doc) {
-			echo "image url: " .$doc['imageurl']. "<br/>";
-		}
-	}
-
-	echo "query: " .$query. "<br/>";
-	echo "<div class=\"col-lg-12\">";
-	$files = scandir('badges/');
-	foreach($files as $file) {
-		if(endsWith($file, ".png")) {
 			echo "<div class=\"col-lg-3 col-md-4 col-sm-6 col-xs-12\">";
-			echo "<a class=\"thumbnail\"><img src='badges/".$file."'></a>";
+			echo "<a href='".$doc['url']."' target=\"_blank\" class=\"thumbnail\"><img src='".$doc['url']."'></a>";
 			echo "</div>";
 		}
 	}
-	echo "</div>";
-	
-	//style=\"height:150px;
-	// while($row = mysql_fetch_array($result)) {
-	// 	echo "<tr>";
-	// 	echo "<td>" . $row['lan'] . "</td>";
-	// 	echo "<td>" . $row['objekttyp'] . "</td>";
-	// 	echo "<td>" . $row['adress'] . "</td>";
-	// 	echo "<td>" . $row['area'] . "</td>";
-	// 	echo "<td>" . $row['rum'] . "</td>";
-	// 	echo "<td>" . $row['pris'] . "</td>";
-	// 	echo "<td>" . $row['avgift'] . "</td>";
-	// 	echo "</tr>";
+
+	// echo "query: " .$query. "<br/>";
+	// echo "<div class=\"col-lg-12 well\">";
+	// $files = scandir('badges/');
+	// foreach($files as $file) {
+	// 		echo "<div class=\"col-lg-3 col-md-4 col-sm-6 col-xs-12\">";
+	// 		echo "<a class=\"thumbnail\"><img src='badges/".$file."'></a>";
+	// 		echo "</div>";
 	// }
+	// echo "</div>";
 ?>

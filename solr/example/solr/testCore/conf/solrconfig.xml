@@ -28,6 +28,9 @@
        </lst>
        -->
   </requestHandler>
+
+  <requestHandler name="/analysis/field" class="solr.FieldAnalysisRequestHandler" />
+
   <requestHandler name="/get" class="solr.RealTimeGetHandler">
      <lst name="defaults">
        <str name="omitHeader">true</str>

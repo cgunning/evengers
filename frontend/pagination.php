@@ -21,10 +21,10 @@
 	$ip=$_POST['ip'];
 	$rowsPerPage=$_POST['rpp'];
 
-	$query = urlencode($query);
+	$query = urlencode("(".$query.")");
 
 	// Create connection
-	$url = "http://".$ip.":8983/solr/newCore/select?q=".$query."&wt=json";
+	$url = "http://".$ip.":8983/solr/testCore/select?q=descr:".$query."&wt=json";
 
 
 	$result = json_decode(curl($url),true);
@@ -36,7 +36,7 @@
 		$pages = ceil($numFound / $rowsPerPage);
 		echo "<ul class=\"pagination\">";
 		for($i=1; $i<=$pages; $i++) {
-			echo "<li><a href=\"#\" onclick=\"ajax(".$i. ")\">".$i."</a></li>";
+			echo "<li><a href=\"#\" onclick=\"ajax('".$i."')\">".$i."</a></li>";
 		}
 		echo "</ul>";
 	}

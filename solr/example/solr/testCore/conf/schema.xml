@@ -3,9 +3,10 @@
    <field name="_version_" type="long" indexed="true" stored="true"/>
   <field name="_root_" type="string" indexed="true" stored="false"/>
 <field name="id" type="int" indexed="true" stored="true" required="true" />
-<field name="title" type="string" indexed="true" stored="true" />
+<field name="title" type="text_en" indexed="true" stored="true" />
 <field name="url" type="text_general" indexed="true" stored="true"/>
 <field name="descr" type="text_en" indexed="true" stored="true" multiValued="true" />
+<field name="text" type="text_en" indexed="true" stored="true" multiValued="true" />
 
     <!-- A text field with defaults appropriate for English, plus
 	 aggressive word-splitting and autophrase features enabled.

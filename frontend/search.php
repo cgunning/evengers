@@ -15,7 +15,7 @@
 		<link rel='stylesheet' href='stylesheets/style.css'>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<script type="text/javascript">
-			CURRENT_IP = "130.229.137.159";
+			CURRENT_IP = "130.229.154.227";
 			ROWS_PER_PAGE = 12;
 			function ajax(page) {
 				var xmlhttp;
@@ -28,6 +28,7 @@
 				xmlhttp.onreadystatechange=function() {
 					if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 						document.getElementById("result").innerHTML=xmlhttp.responseText;
+						fitImages();
 					}
 				}
 				xmlhttp.open("POST","result.php",true);
@@ -56,6 +57,26 @@
 				ajax('1');
 				ajaxPagination();
 			}
+			function fitImages() {
+				$("a").each(function(){
+					// console.log('RESIZING IMAGES');
+					var thisWidth = $(this).width();
+					var thisHeight = $(this).height();
+					var img = $(this).children();
+					var imgWidth = img.width();
+					var imgHeight = img.height();
+
+					if(imgHeight > thisHeight) {
+					    img.css("width", "auto");
+					    img.css("height", "100%");
+					} else {
+					    img.css("width", "100%");
+					    img.css("height", "auto");
+					    // img.css("margin-top", (thisHeight-img.height())/2);
+					}
+				});
+			}
+
 		</script>
 		<script>
 			$(document).ready(function(){
@@ -76,7 +97,7 @@
 
 		<form name="searchform">
 			<div class="col-lg-12">
-				<div class="col-md-12 col-lg-offset-3 col-lg-6">
+				<div class="col-md-12 col-lg-offset-3 col-lg-6 well">
 					<div id="jumbo" class="jumbotron">
 						<h1 class="text-center">Image search</h1>
 					</div>
