@@ -33,22 +33,23 @@
 	$query = urlencode("(".$query.")");
 
 	$start = ($page-1) * $rowsPerPage;
-	echo "PAGE: " .$page. "<br/>";
-	echo "QUERY: " .$query. "<br/>";
-	echo "START: " .$start. "<br/>";
+	// echo "PAGE: " .$page. "<br/>";
+	// echo "QUERY: " .$query. "<br/>";
+	// echo "START: " .$start. "<br/>";
 
 	// Create connection
-	$url = "http://".$ip.":8983/solr/testCore/select?q=descr:".$query."+title:".$query."&mlt=true&mlt.fl=title,descr&start=".$start."&rows=".$rowsPerPage."&wt=json";
+	$url = "http://".$ip.":8983/solr/testCore/select?q=descr:".$query."+title:".$query."&start=".$start."&rows=".$rowsPerPage."&wt=json";
 	 
 	//Executes the URL and saves the content (json) in the variable.
 	$content = curl($url);
-	echo "raw content:" .$content. "<br/>";
+	// echo "raw content:" .$content. "<br/>";
 	if($content) {
 		$result = json_decode($content,true);
 		//prints the content of array on the page. Instead perform the operation you ae interested.
 		foreach($result['response']['docs'] as $doc) {
 			echo "<div class=\"col-lg-3 col-md-4 col-sm-6 col-xs-12\">";
-			echo "<a href='".$doc['url']."' target=\"_blank\" class=\"thumbnail\"><img src='".$doc['url']."'></a>";
+			// echo "<a href='".$doc['url']."' target=\"_blank\" class=\"thumbnail\"><img src='".$doc['url']."'></a>";
+			echo "<a href='".$doc['url']."' target=\"_blank\" class=\"thumbnail\" style='background-image:url(".$doc['url'].")'>";
 			echo "</div>";
 		}
 	}

@@ -24,7 +24,7 @@
 	$query = urlencode("(".$query.")");
 
 	// Create connection
-	$url = "http://".$ip.":8983/solr/testCore/select?q=descr:".$query."&wt=json";
+	$url = "http://".$ip.":8983/solr/testCore/select?q=descr:".$query."+title:".$query."&wt=json";
 
 
 	$result = json_decode(curl($url),true);

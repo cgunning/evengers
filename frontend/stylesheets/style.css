@@ -5,7 +5,7 @@ body {
 .thumbnail {
   text-align: center;
   text-decoration: none !important;
-  height:300px;
+  height:250px;
 }
 
 .navbar-btn {
@@ -23,11 +23,11 @@ input {
   font: inherit;
   margin: 0px -1px;
 }
-img {
-  width:100%;
-  height:auto;
+a {
+   background-repeat:no-repeat;
+   background-size:contain;
+   background-position:center;
 }
-
 /*
  * Sidebar
  */
